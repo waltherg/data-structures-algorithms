@@ -22,7 +22,7 @@ class HashTableArray():
         return self.get_hash(obj) % self.size
 
     def insert(self, obj):
-        index = get_index(obj)
+        index = self.get_index(obj)
 
         if self.objects[index] is not None:
             self.log.warn('Index %d occupied. Object not inserted.' % index)
@@ -31,11 +31,11 @@ class HashTableArray():
             self.objects[index] = obj
 
     def search(self, obj):
-        index = get_index(obj)
+        index = self.get_index(obj)
         return self.objects[index]
 
     def delete(self, obj):
-        index = get_index(obj)
+        index = self.get_index(obj)
         self.objects[index] = None
 
 
