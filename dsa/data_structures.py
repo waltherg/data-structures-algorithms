@@ -15,11 +15,11 @@ class HashTableArray():
         self.size = size
         self.log = logging.getLogger('HashTableArray')
 
-    def get_hash(obj):
+    def get_hash(self, obj):
         return hash(obj)  # lazy cheat: use Python's built-in hash function
 
-    def get_index(obj):
-        return get_hash(obj) % self.size
+    def get_index(self, obj):
+        return self.get_hash(obj) % self.size
 
     def insert(self, obj):
         index = get_index(obj)
